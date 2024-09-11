@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Work Experience - Xiling Wang</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Xiling Wang</h1>
+        <nav>
+            <a href="index.html">About Me</a>
+            <a href="projects.html">Projects</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+    <section class="work-experience">
+        <h2>Work Experience</h2>
+        <ul>
+            <li>
+                <h3>Software Engineer Intern - Brookhaven Instruments (May 2023 – Aug 2023)</h3>
+                <p>Developed a Python data analysis program, collaborating with hardware engineers for seamless integration into chemical engineering systems.</p>
+            </li>
+            <li>
+                <h3>Part-time Assistant - Viridian Therapeutics, Inc. (Apr 2024 – Jun 2024)</h3>
+                <p>Contributed to a statistical analysis plan for a clinical trial on semaglutide, utilizing SAS software for generating summary tables and reports.</p>
+            </li>
+        </ul>
+    </section>
+</body>
+</html>
