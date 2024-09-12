@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me - Xiling Wang</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Xiling Wang</h1>
+        <nav>
+            <a href="index.html">About me</a>
+            <a href="work-experience.html">Work Experience</a>
+            <a href="projects.html">Projects</a>
+            <a href="contact.html">Contact</a>
+            <a href="assignments.html">Assignments</a>
+        </nav>
+    </header>
+    <section class="about">
+        <h2>About Me</h2>
+        <p>Hi, I’m Xiling Wang, a Computer Science and Physics major with a passion for software development, machine learning, and video game design. I'm currently studying at Boston University and have worked on various projects ranging from clinical trials to video game design elements. My journey involves both academic research and hands-on industry experience in software engineering and data analysis.</p>
+    </section>
+</body>
+</html>
