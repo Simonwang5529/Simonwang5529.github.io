@@ -1,25 +1,279 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Me - Xiling Wang</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Xiling Wang — About</title>
+  <meta name="description" content="About me — Xiling Wang, MS in Biostatistics at Columbia University; B.A. in Computer Science & Physics (Math minor) at Boston University." />
+  <meta name="author" content="Xiling Wang" />
+
+  <!-- Favicon (optional) -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>🧪</text></svg>">
+
+  <style>
+    :root {
+      --bg: #0b0f14;
+      --surface: #121821;
+      --muted: #a9b1bd;
+      --text: #e6edf3;
+      --accent: #64b5f6;
+      --accent-2: #77dd77;
+      --card: #0f141b;
+      --border: #1f2937;
+      --shadow: 0 10px 30px rgba(0,0,0,0.35);
+      --radius: 18px;
+    }
+    @media (prefers-color-scheme: light) {
+      :root {
+        --bg: #f7fafc;
+        --surface: #ffffff;
+        --muted: #475569;
+        --text: #0f172a;
+        --accent: #0ea5e9;
+        --accent-2: #059669;
+        --card: #ffffff;
+        --border: #e5e7eb;
+        --shadow: 0 8px 24px rgba(2,6,23,0.08);
+      }
+    }
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Inter, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
+      background: radial-gradient(1200px 800px at 10% -10%, rgba(100,181,246,0.12), transparent),
+                  radial-gradient(1000px 600px at 90% -20%, rgba(119,221,119,0.12), transparent),
+                  var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .container { max-width: 1100px; padding: 32px 20px 64px; margin: 0 auto; }
+
+    /* Header */
+    .nav {
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 16px; padding: 14px 18px; border: 1px solid var(--border);
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0));
+      border-radius: 999px; box-shadow: var(--shadow);
+      position: sticky; top: 16px; backdrop-filter: blur(8px);
+    }
+    .brand { display: flex; align-items: center; gap: 12px; font-weight: 700; }
+    .brand .dot { width: 10px; height: 10px; border-radius: 50%; background: var(--accent-2); box-shadow: 0 0 0 6px rgba(119,221,119,0.15); }
+    .nav a { color: var(--text); opacity: 0.9; }
+    .nav .links { display: flex; gap: 16px; align-items: center; }
+    .btn { border: 1px solid var(--border); background: var(--surface); color: var(--text); padding: 10px 14px; border-radius: 12px; display: inline-flex; align-items: center; gap: 8px; font-weight: 600; }
+    .btn:hover { filter: brightness(1.08); text-decoration: none; }
+
+    /* Hero */
+    .hero { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 28px; margin-top: 28px; }
+    .hero-card { background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02)); border: 1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow); padding: 28px; }
+    .title { font-size: clamp(28px, 5vw, 44px); line-height: 1.15; margin: 0 0 8px; }
+    .subtitle { margin: 0 0 14px; font-size: 18px; color: var(--muted); }
+    .badge { display: inline-block; border: 1px solid var(--border); background: var(--card); color: var(--text); padding: 6px 10px; border-radius: 999px; font-size: 12px; margin: 6px 6px 0 0; }
+
+    .quick {
+      display: grid; gap: 12px;
+    }
+    .qrow { display: flex; justify-content: space-between; gap: 16px; padding: 10px 12px; border: 1px dashed var(--border); border-radius: 10px; background: var(--card); }
+    .qrow span:first-child { color: var(--muted); }
+
+    /* Sections */
+    .section { margin-top: 28px; }
+    .section h2 { margin: 0 0 12px; font-size: 22px; }
+    .card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; box-shadow: var(--shadow); }
+
+    .grid { display: grid; gap: 16px; }
+    .grid.cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .grid.cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+
+    .item h3 { margin: 0 0 6px; font-size: 18px; }
+    .item p { margin: 0; color: var(--muted); }
+    .item .meta { color: var(--muted); font-size: 13px; margin-top: 6px; }
+
+    .footer { margin-top: 36px; border-top: 1px solid var(--border); padding-top: 16px; color: var(--muted); font-size: 14px; display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+
+    /* Language toggle */
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .hero { grid-template-columns: 1fr; }
+      .grid.cols-2 { grid-template-columns: 1fr; }
+      .grid.cols-3 { grid-template-columns: 1fr; }
+    }
+  </style>
 </head>
-<body>
-    <header>
-        <h1>Xiling Wang</h1>
-        <nav>
-            <a href="index.html">About me</a>
-            <a href="work-experience.html">Work Experience</a>
-            <a href="projects.html">Projects</a>
-            <a href="contact.html">Contact</a>
-            <a href="assignments.html">Assignments</a>
-        </nav>
-    </header>
-    <section class="about">
-        <h2>About Me</h2>
-        <p>Hi, I’m Xiling Wang, a Computer Science and Physics major with a passion for software development, machine learning, and video game design. I'm currently studying at Boston University and have worked on various projects ranging from clinical trials to video game design elements. My journey involves both academic research and hands-on industry experience in software engineering and data analysis.</p>
+<body data-lang="en">
+  <div class="container">
+    <nav class="nav">
+      <div class="brand"><span class="dot"></span><a href="#">Xiling Wang</a></div>
+      <div class="links">
+        <a href="#about">About</a>
+        <a href="#work">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#teaching">Teaching</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+      <div class="hero-card">
+        <h1 class="title">Xiling Wang</h1>
+        <p class="subtitle en">MS in Biostatistics @ Columbia University · B.A. in Computer Science & Physics (Math minor) @ Boston University</p>
+        <p class="subtitle zh">哥伦比亚大学生物统计学硕士在读 · 波士顿大学计算机科学 & 物理学本科（数学辅修）</p>
+        <div>
+          <span class="badge">Biostatistics</span>
+          <span class="badge">Machine Learning</span>
+          <span class="badge">Software + Data</span>
+          <span class="badge">Python · C# · R</span>
+        </div>
+      </div>
+      <div class="hero-card">
+        <div class="quick">
+          <div class="qrow"><span>Current</span><span>MS Student, Columbia Biostatistics</span></div>
+          <div class="qrow"><span>Location</span><span>Fort Lee, NJ (USA)</span></div>
+          <div class="qrow"><span>Focus</span><span>ML for health / scientific data</span></div>
+          <div class="qrow"><span>Interests</span><span>QSVM, clinical trials, air quality</span></div>
+        </div>
+      </div>
     </section>
+
+    <!-- About -->
+    <section id="about" class="section grid cols-2">
+      <div class="card">
+        <h2>About</h2>
+        <p>
+          I bridge <strong>biostatistics</strong>, <strong>machine learning</strong>, and <strong>software engineering</strong>. My recent work spans media engagement modeling,
+          instrument-integrated analytics for scientific R&amp;D, and environmental data products built with a <em>Python + C#</em> stack.
+          I enjoy turning messy real-world datasets into clear insights and reproducible tools.
+        </p>
+      </div>
+      <div class="card">
+        <h2>Highlights</h2>
+        <ul>
+          <li>Data Analyst Intern @ Broadhead Analytics: regression &amp; random forests for TikTok/YouTube/Netflix engagement.</li>
+          <li>Software/Data Intern @ Brookhaven Instruments: built a Python analytics platform integrated with lab instruments.</li>
+          <li>Data Scientist @ Cen-Sun (Picarro): hybrid <em>WinForms + Flask</em> apps for gas concentration/flux analytics.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Experience -->
+    <section id="work" class="section">
+      <h2>Experience</h2>
+      <div class="grid cols-3">
+        <div class="card item">
+          <h3>Broadhead Analytics</h3>
+          <p class="meta">Data Analyst Intern · Jul 2024 – Aug 2024 · New York, NY</p>
+          <p>Built models (logistic regression, random forests) to analyze cross‑platform engagement; delivered dashboards &amp; insights.</p>
+        </div>
+        <div class="card item">
+          <h3>Brookhaven Instruments</h3>
+          <p class="meta">Software Engineer / Data Analyst Intern · May 2023 – Aug 2023 · Remote</p>
+          <p>Created a Python analytics app with interactive plotting; aligned software with instrumentation for R&amp;D.</p>
+        </div>
+        <div class="card item">
+          <h3>Cen‑Sun (Picarro)</h3>
+          <p class="meta">Data Scientist · May 2025 – Present</p>
+          <p>Built Python + C# tools for Picarro gas data (means/flux, outlier removal via Isolation Forest).</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="section">
+      <h2>Selected Projects</h2>
+      <div class="grid cols-2">
+        <div class="card item">
+          <h3>QSVM Implementation</h3>
+          <p class="meta">Sep 2024 – Present · <a href="https://github.com/Simonwang5529/QSVM" target="_blank" rel="noopener">GitHub →</a></p>
+          <p>Implemented a Quantum SVM with custom kernels in a hybrid quantum‑classical setup; compared against classical SVM.</p>
+        </div>
+        <div class="card item">
+          <h3>Air Quality ML</h3>
+          <p class="meta">Sep 2024 – Dec 2024 · <a href="https://github.com/zalu224/506-project" target="_blank" rel="noopener">GitHub →</a></p>
+          <p>Preprocessed urban air data; benchmarked Random Forest, K‑Means, and LSTM for pollutant classification.</p>
+        </div>
+        <div class="card item">
+          <h3>Semaglutide Trial SAP</h3>
+          <p class="meta">Apr 2024 – Jun 2024</p>
+          <p>Co‑developed a statistical analysis plan for a 68‑week double‑blind trial; designed endpoints and SAS workflows.</p>
+        </div>
+        <div class="card item">
+          <h3>Fake News Detection</h3>
+          <p class="meta">Jan 2024 – May 2024</p>
+          <p>Built a news classifier; achieved 97.3% accuracy using Logistic Regression on curated datasets.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Teaching -->
+    <section id="teaching" class="section">
+      <h2>Teaching</h2>
+      <div class="grid cols-2">
+        <div class="card item">
+          <h3>Boston University</h3>
+          <p class="meta">Physics Mentor · Sep 2024 – May 2024</p>
+          <p>Mentored students, individualized problem‑solving strategies, and exam readiness.</p>
+        </div>
+        <div class="card item">
+          <h3>HAIGE 1v1</h3>
+          <p class="meta">Lecturer · May 2025 – Present</p>
+          <p>Teach Python, calculus, linear algebra, probability, statistics, discrete math, and differential equations.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills / Contact -->
+    <section id="contact" class="section grid cols-2">
+      <div class="card">
+        <h2>Skills</h2>
+        <p>Python, C/C++, Java, R, Fortran, SQL, SAS, Unix/Linux, Git · GitHub Actions, WinForms, Matplotlib, Scikit‑learn, Jupyter, Excel</p>
+      </div>
+      <div class="card">
+        <h2>Contact</h2>
+        <p>
+          <strong>Email:</strong> <a href="mailto:xw5529@gmail.com">xw5529@gmail.com</a> · <a href="mailto:xw3107@cumc.columbia.edu">xw3107@cumc.columbia.edu</a><br />
+          <strong>GitHub:</strong> <a href="https://github.com/Simonwang5529" target="_blank" rel="noopener">github.com/Simonwang5529</a>
+        </p>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <span>© <span id="year"></span> Xiling Wang</span>
+      <span>Built with semantic HTML + a dash of CSS.</span>
+    </footer>
+  </div>
+
+  <script>
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+
+  <!-- Structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Xiling Wang",
+    "description": "MS in Biostatistics at Columbia University; BA in CS & Physics (Math minor) at Boston University.",
+    "email": "mailto:xw5529@gmail.com",
+    "url": "https://github.com/Simonwang5529",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Fort Lee",
+      "addressRegion": "NJ",
+      "addressCountry": "US"
+    },
+    "alumniOf": [
+      {"@type": "CollegeOrUniversity", "name": "Boston University"},
+      {"@type": "CollegeOrUniversity", "name": "Columbia University"}
+    ],
+    "knowsAbout": ["Biostatistics", "Machine Learning", "Quantum SVM", "Clinical Trials", "Air Quality Analytics"]
+  }
+  </script>
 </body>
 </html>
