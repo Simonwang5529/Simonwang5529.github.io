@@ -7,15 +7,12 @@
 
   <!-- SEO description -->
   <meta name="description" content="About me — Xiling Wang, MS in Biostatistics at Columbia University; B.A. in Computer Science & Physics (Math minor) at Boston University." />
-
   <meta name="author" content="Xiling Wang" />
 
   <!-- Favicon (optional) -->
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>🧪</text></svg>">
-</head>
 
-
-</html>
+  <!-- ====== YOUR STYLES (must be inside <head>) ====== -->
   <style>
     :root {
       --bg: #0b0f14;
@@ -47,9 +44,10 @@
     body {
       margin: 0;
       font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Inter, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
-      background: radial-gradient(1200px 800px at 10% -10%, rgba(100,181,246,0.12), transparent),
-                  radial-gradient(1000px 600px at 90% -20%, rgba(119,221,119,0.12), transparent),
-                  var(--bg);
+      background:
+        radial-gradient(1200px 800px at 10% -10%, rgba(100,181,246,0.12), transparent),
+        radial-gradient(1000px 600px at 90% -20%, rgba(119,221,119,0.12), transparent),
+        var(--bg);
       color: var(--text);
       line-height: 1.65;
     }
@@ -80,9 +78,7 @@
     .subtitle { margin: 0 0 14px; font-size: 18px; color: var(--muted); }
     .badge { display: inline-block; border: 1px solid var(--border); background: var(--card); color: var(--text); padding: 6px 10px; border-radius: 999px; font-size: 12px; margin: 6px 6px 0 0; }
 
-    .quick {
-      display: grid; gap: 12px;
-    }
+    .quick { display: grid; gap: 12px; }
     .qrow { display: flex; justify-content: space-between; gap: 16px; padding: 10px 12px; border: 1px dashed var(--border); border-radius: 10px; background: var(--card); }
     .qrow span:first-child { color: var(--muted); }
 
@@ -101,9 +97,6 @@
 
     .footer { margin-top: 36px; border-top: 1px solid var(--border); padding-top: 16px; color: var(--muted); font-size: 14px; display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
 
-    /* Language toggle */
-
-    /* Responsive */
     @media (max-width: 900px) {
       .hero { grid-template-columns: 1fr; }
       .grid.cols-2 { grid-template-columns: 1fr; }
@@ -111,6 +104,7 @@
     }
   </style>
 </head>
+
 <body data-lang="en">
   <div class="container">
     <nav class="nav">
@@ -147,7 +141,7 @@
       </div>
     </section>
 
-     <!-- About -->
+    <!-- About -->
     <section id="about" class="section grid cols-2">
       <div class="card">
         <h2>About</h2>
@@ -241,6 +235,7 @@
         </div>
       </div>
     </section>
+
     <!-- Teaching -->
     <section id="teaching" class="section">
       <h2>Teaching</h2>
@@ -248,7 +243,7 @@
         <div class="card item">
           <h3>Boston University</h3>
           <p class="meta">Physics Mentor · Sep 2024 – May 2024</p>
-          <p>Mentored students, individualized problem‑solving strategies, and exam readiness.</p>
+          <p>Mentored students, individualized problem-solving strategies, and exam readiness.</p>
         </div>
         <div class="card item">
           <h3>HAIGE 1v1</h3>
@@ -262,7 +257,7 @@
     <section id="contact" class="section grid cols-2">
       <div class="card">
         <h2>Skills</h2>
-        <p>Python, C/C++, Java, R, Fortran, SQL, SAS, Unix/Linux, Git · GitHub Actions, WinForms, Matplotlib, Scikit‑learn, Jupyter, Excel</p>
+        <p>Python, C/C++, Java, R, Fortran, SQL, SAS, Unix/Linux, Git · GitHub Actions, WinForms, Matplotlib, Scikit-learn, Jupyter, Excel</p>
       </div>
       <div class="card">
         <h2>Contact</h2>
@@ -280,7 +275,6 @@
   </div>
 
   <script>
-    // Year
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
 
