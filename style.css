@@ -1,40 +1,48 @@
-/* =========================================
-   Xiling Wang — Clean Black Theme
-   ========================================= */
-
 :root {
-  --bg: #000000;          /* pure black */
-  --surface: #0d0d0d;     /* near-black for cards/nav */
-  --card: #111111;
-  --text: #f5f5f5;         /* light text */
-  --muted: #b5b5b5;
-  --accent: #64b5f6;       /* blue accent */
-  --accent-2: #77dd77;     /* soft green */
-  --border: #222222;
+  --bg: #f5f7fa;              /* soft off-white background */
+  --surface: rgba(255, 255, 255, 0.65);
+  --border: rgba(0, 0, 0, 0.08);
+  --text: #111;
+  --muted: #444;
+  --accent: #007aff;           /* iOS blue */
+  --accent-soft: rgba(0, 122, 255, 0.15);
   --radius: 18px;
-  --shadow: 0 10px 24px rgba(0,0,0,0.7);
+  --shadow: 0 8px 28px rgba(0, 0, 0, 0.08);
 }
 
 /* Base */
 * { box-sizing: border-box; margin: 0; padding: 0; }
 html, body { height: 100%; }
+
 body {
-  background-color: var(--bg);
-  color: var(--text);
   font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text",
                Segoe UI, Roboto, Helvetica, Arial, system-ui;
+  background: linear-gradient(
+      180deg,
+      rgba(200, 225, 255, 0.3) 0%,
+      rgba(245, 247, 250, 1) 80%
+    ),
+    var(--bg);
+  color: var(--text);
   line-height: 1.6;
 }
 
 /* Links */
-a { color: var(--accent); text-decoration: none; }
-a:hover { text-decoration: underline; }
+a {
+  color: var(--accent);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+a:hover {
+  color: #005cd6;
+  text-decoration: underline;
+}
 
-/* Container */
+/* Layout */
 .container {
   max-width: 1100px;
-  padding: 32px 20px 64px;
   margin: 0 auto;
+  padding: 32px 20px 64px;
 }
 
 /* Navbar */
@@ -47,10 +55,11 @@ a:hover { text-decoration: underline; }
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: 999px;
-  box-shadow: var(--shadow);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: 0 4px 24px rgba(0, 122, 255, 0.08);
   position: sticky;
   top: 16px;
-  z-index: 20;
 }
 
 .brand {
@@ -58,14 +67,14 @@ a:hover { text-decoration: underline; }
   align-items: center;
   gap: 10px;
   font-weight: 700;
+  color: var(--text);
 }
-
 .brand .dot {
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  background: var(--accent-2);
-  box-shadow: 0 0 0 6px rgba(119,221,119,0.15);
+  background: var(--accent);
+  box-shadow: 0 0 0 8px var(--accent-soft);
 }
 
 .nav .links {
@@ -77,7 +86,7 @@ a:hover { text-decoration: underline; }
 .nav a {
   color: var(--text);
   opacity: 0.85;
-  transition: color 0.2s ease;
+  transition: opacity 0.2s ease;
 }
 .nav a:hover {
   opacity: 1;
@@ -91,33 +100,38 @@ a:hover { text-decoration: underline; }
   gap: 28px;
   margin-top: 32px;
 }
+
 .hero-card {
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
   box-shadow: var(--shadow);
   padding: 28px;
 }
+
 .title {
   font-size: clamp(28px, 5vw, 44px);
-  line-height: 1.2;
   font-weight: 700;
-  color: #ffffff;
+  color: var(--text);
 }
+
 .subtitle {
   margin-top: 8px;
-  font-size: 18px;
   color: var(--muted);
 }
+
 .badge {
   display: inline-block;
   border: 1px solid var(--border);
-  background: #1a1a1a;
+  background: rgba(255, 255, 255, 0.8);
   color: var(--text);
-  padding: 6px 12px;
+  padding: 6px 10px;
   border-radius: 999px;
   font-size: 13px;
   margin: 6px 6px 0 0;
+  box-shadow: 0 2px 4px rgba(0, 122, 255, 0.08);
 }
 
 /* Quick info cards */
@@ -129,55 +143,45 @@ a:hover { text-decoration: underline; }
   padding: 10px 12px;
   border: 1px solid var(--border);
   border-radius: 10px;
-  background: var(--card);
+  background: rgba(255,255,255,0.75);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 .qrow span:first-child { color: var(--muted); }
 
 /* Sections */
-.section { margin-top: 36px; }
+.section { margin-top: 40px; }
 .section h2 {
-  font-size: 24px;
+  font-size: 22px;
   margin-bottom: 12px;
-  color: #ffffff;
+  color: var(--text);
   border-bottom: 1px solid var(--border);
   padding-bottom: 4px;
 }
 
 /* Cards */
 .card {
-  background: var(--card);
+  background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius);
   padding: 20px;
   box-shadow: var(--shadow);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 .card:hover {
   transform: translateY(-2px);
-  box-shadow: 0 12px 30px rgba(0,0,0,0.75);
+  box-shadow: 0 12px 36px rgba(0, 122, 255, 0.12);
 }
-
-/* Grid helpers */
-.grid { display: grid; gap: 16px; }
-.grid.cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-.grid.cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-
-/* Item cards */
-.item h3 {
-  margin-bottom: 6px;
-  font-size: 18px;
-  color: #fff;
-}
-.item p { color: var(--muted); }
-.item .meta { font-size: 13px; color: var(--muted); margin-top: 4px; }
 
 /* Footer */
 .footer {
   margin-top: 48px;
   border-top: 1px solid var(--border);
   padding-top: 16px;
+  color: #555;
   font-size: 14px;
-  color: var(--muted);
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
