@@ -2,109 +2,31 @@
 <html lang="en">
 
 <head>
-  <link rel="stylesheet" href="style.css?v=2">
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="color-scheme" content="dark light" />
   <title>Xiling Wang — About</title>
 
-  <!-- SEO description -->
   <meta name="description" content="About me — Xiling Wang, MS in Biostatistics at Columbia University; B.A. in Computer Science & Physics (Math minor) at Boston University." />
   <meta name="author" content="Xiling Wang" />
 
-  <!-- Favicon (optional) -->
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>🧪</text></svg>">
 
-  <!-- ====== YOUR STYLES (must be inside <head>) ====== -->
-  <style>
-    :root {
-      --bg: #0b0f14;
-      --surface: #121821;
-      --muted: #a9b1bd;
-      --text: #e6edf3;
-      --accent: #64b5f6;
-      --accent-2: #77dd77;
-      --card: #0f141b;
-      --border: #1f2937;
-      --shadow: 0 10px 30px rgba(0,0,0,0.35);
-      --radius: 18px;
-    }
-    @media (prefers-color-scheme: light) {
-      :root {
-        --bg: #f7fafc;
-        --surface: #ffffff;
-        --muted: #475569;
-        --text: #0f172a;
-        --accent: #0ea5e9;
-        --accent-2: #059669;
-        --card: #ffffff;
-        --border: #e5e7eb;
-        --shadow: 0 8px 24px rgba(2,6,23,0.08);
-      }
-    }
-    * { box-sizing: border-box; }
-    html, body { height: 100%; }
-    body {
-      margin: 0;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Inter, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
-      background:
-        radial-gradient(1200px 800px at 10% -10%, rgba(100,181,246,0.12), transparent),
-        radial-gradient(1000px 600px at 90% -20%, rgba(119,221,119,0.12), transparent),
-        var(--bg);
-      color: var(--text);
-      line-height: 1.65;
-    }
-    a { color: var(--accent); text-decoration: none; }
-    a:hover { text-decoration: underline; }
+  <!-- External stylesheet (preferred) -->
+  <link rel="stylesheet" href="style.css?v=3">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="color-scheme" content="dark light" />
+  <title>Xiling Wang — About</title>
 
-    .container { max-width: 1100px; padding: 32px 20px 64px; margin: 0 auto; }
+  <meta name="description" content="About me — Xiling Wang, MS in Biostatistics at Columbia University; B.A. in Computer Science & Physics (Math minor) at Boston University." />
+  <meta name="author" content="Xiling Wang" />
 
-    /* Header */
-    .nav {
-      display: flex; align-items: center; justify-content: space-between;
-      gap: 16px; padding: 14px 18px; border: 1px solid var(--border);
-      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0));
-      border-radius: 999px; box-shadow: var(--shadow);
-      position: sticky; top: 16px; backdrop-filter: blur(8px);
-    }
-    .brand { display: flex; align-items: center; gap: 12px; font-weight: 700; }
-    .brand .dot { width: 10px; height: 10px; border-radius: 50%; background: var(--accent-2); box-shadow: 0 0 0 6px rgba(119,221,119,0.15); }
-    .nav a { color: var(--text); opacity: 0.9; }
-    .nav .links { display: flex; gap: 16px; align-items: center; }
-    .btn { border: 1px solid var(--border); background: var(--surface); color: var(--text); padding: 10px 14px; border-radius: 12px; display: inline-flex; align-items: center; gap: 8px; font-weight: 600; }
-    .btn:hover { filter: brightness(1.08); text-decoration: none; }
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>🧪</text></svg>">
 
-    /* Hero */
-    .hero { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 28px; margin-top: 28px; }
-    .hero-card { background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02)); border: 1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow); padding: 28px; }
-    .title { font-size: clamp(28px, 5vw, 44px); line-height: 1.15; margin: 0 0 8px; }
-    .subtitle { margin: 0 0 14px; font-size: 18px; color: var(--muted); }
-    .badge { display: inline-block; border: 1px solid var(--border); background: var(--card); color: var(--text); padding: 6px 10px; border-radius: 999px; font-size: 12px; margin: 6px 6px 0 0; }
-
-    .quick { display: grid; gap: 12px; }
-    .qrow { display: flex; justify-content: space-between; gap: 16px; padding: 10px 12px; border: 1px dashed var(--border); border-radius: 10px; background: var(--card); }
-    .qrow span:first-child { color: var(--muted); }
-
-    /* Sections */
-    .section { margin-top: 28px; }
-    .section h2 { margin: 0 0 12px; font-size: 22px; }
-    .card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; box-shadow: var(--shadow); }
-
-    .grid { display: grid; gap: 16px; }
-    .grid.cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-    .grid.cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-
-    .item h3 { margin: 0 0 6px; font-size: 18px; }
-    .item p { margin: 0; color: var(--muted); }
-    .item .meta { color: var(--muted); font-size: 13px; margin-top: 6px; }
-
-    .footer { margin-top: 36px; border-top: 1px solid var(--border); padding-top: 16px; color: var(--muted); font-size: 14px; display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
-
-    @media (max-width: 900px) {
-      .hero { grid-template-columns: 1fr; }
-      .grid.cols-2 { grid-template-columns: 1fr; }
-      .grid.cols-3 { grid-template-columns: 1fr; }
-    }
-  </style>
+  <!-- External stylesheet (preferred) -->
+  <link rel="stylesheet" href="style.css?v=3">
 </head>
 
 <body data-lang="en">
