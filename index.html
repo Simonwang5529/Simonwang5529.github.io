@@ -14,19 +14,6 @@
 
   <!-- External stylesheet (preferred) -->
   <link rel="stylesheet" href="style.css?v=3">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="color-scheme" content="dark light" />
-  <title>Xiling Wang — About</title>
-
-  <meta name="description" content="About me — Xiling Wang, MS in Biostatistics at Columbia University; B.A. in Computer Science & Physics (Math minor) at Boston University." />
-  <meta name="author" content="Xiling Wang" />
-
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>🧪</text></svg>">
-
-  <!-- External stylesheet (preferred) -->
-  <link rel="stylesheet" href="style.css?v=3">
 </head>
 
 <body data-lang="en">
@@ -35,7 +22,9 @@
       <div class="brand"><span class="dot"></span><a href="#">Xiling Wang</a></div>
       <div class="links">
         <a href="#about">About</a>
+        <a href="#education">Education</a>
         <a href="#work">Experience</a>
+        <a href="#research">Research</a>
         <a href="#projects">Projects</a>
         <a href="#teaching">Teaching</a>
         <a href="#contact">Contact</a>
@@ -61,6 +50,7 @@
           <div class="qrow"><span>Location</span><span>Fort Lee, NJ (USA)</span></div>
           <div class="qrow"><span>Focus</span><span>ML for health / scientific data</span></div>
           <div class="qrow"><span>Interests</span><span>QSVM, clinical trials, air quality</span></div>
+          <div class="qrow"><span>Current Research</span><span>Energy insecurity, NYC power outages, CVI</span></div>
         </div>
       </div>
     </section>
@@ -84,7 +74,23 @@
           <li>Data Analyst Intern @ Broadhead Analytics: regression &amp; random forest modeling for large-scale media engagement (TikTok/YouTube/Netflix).</li>
           <li>Software Engineer Intern @ Brookhaven Instruments: Python analytics tools integrated with laboratory instrumentation.</li>
           <li>Strong foundation in applied statistics, ML, and software design — Python, R, C/C++, and SAS.</li>
+          <li>Research Assistant @ Columbia Climate School (Lamont-Doherty Earth Observatory): tract-level modeling of energy insecurity linking climate hazards, socioeconomic vulnerability, and NYC power outage data (3M+ rows).</li>
         </ul>
+      </div>
+    </section>
+
+    <!-- Education -->
+    <section id="education" class="section">
+      <h2>Education</h2>
+      <div class="grid cols-2">
+        <div class="card item">
+          <h3>Columbia University, Mailman School of Public Health</h3>
+          <p class="meta">M.S. in Biostatistics, Data Science Track · New York, NY · May 2027</p>
+        </div>
+        <div class="card item">
+          <h3>Boston University</h3>
+          <p class="meta">B.A. in Computer Science &amp; Physics; Minor in Mathematics · Boston, MA · May 2025</p>
+        </div>
       </div>
     </section>
 
@@ -115,6 +121,25 @@
           <p>
             Designed a Python-based visualization platform for chemical engineering datasets.
             Enabled interactive data exploration and outlier detection, integrating seamlessly with lab instrumentation for R&amp;D teams.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Research / Academic Experience -->
+    <section id="research" class="section">
+      <h2>Research / Academic Experience</h2>
+      <div class="grid cols-2">
+        <div class="card item">
+          <h3>Climate Amplified Energy Insecurity Modeling</h3>
+          <p class="meta">Research Assistant · Columbia Climate School (Lamont-Doherty Earth Observatory) · Jan 2026 – Present · <a href="https://simonwang5529.github.io/EnergyProject_dataset/" target="_blank" rel="noopener">Project site →</a></p>
+          <p>
+            Helping build a tract-level machine learning framework to quantify energy insecurity by integrating climate hazards,
+            socioeconomic vulnerability, housing, and electricity outage datasets across NYC (3M+ rows spanning 2014–2023).
+            Built data pipelines harmonizing LEAD, FEMA National Risk Index, and outage/CVI data, then ran extensive statistical
+            analysis — regression and count models, seasonality and vulnerability testing across boroughs and years — to
+            establish which factors robustly predict outage frequency and duration. Now moving from statistical modeling into
+            building predictive machine learning models for community-level outage risk.
           </p>
         </div>
       </div>
@@ -155,6 +180,17 @@
           <p>
             Developed a machine learning model using logistic regression for fake news classification,
             achieving 97.3% accuracy on curated multi-source datasets.
+          </p>
+        </div>
+        <div class="card item">
+          <h3>Assessing the Role of Personality in Drug Usage</h3>
+          <p class="meta">Sep 2025 – Dec 2025 · Columbia University · <a href="https://simonwang5529.github.io/P8105_FinalProject/" target="_blank" rel="noopener">GitHub →</a></p>
+          <p>
+            Analyzed the Fehrman et al. (2015) Drug Consumption dataset (N ≈ 1,885) to study associations between
+            personality traits (Big Five, impulsivity, sensation seeking) and legal/illegal drug usage.
+            Performed data cleaning, feature engineering, and exploratory analysis, then built multivariate regression
+            and correlation models to quantify relationships between personality factors and drug consumption while
+            accounting for potential confounders.
           </p>
         </div>
       </div>
@@ -221,7 +257,7 @@
       {"@type": "CollegeOrUniversity", "name": "Boston University"},
       {"@type": "CollegeOrUniversity", "name": "Columbia University"}
     ],
-    "knowsAbout": ["Biostatistics", "Machine Learning", "Quantum SVM", "Clinical Trials", "Air Quality Analytics"]
+    "knowsAbout": ["Biostatistics", "Machine Learning", "Quantum SVM", "Clinical Trials", "Air Quality Analytics", "Energy Insecurity Modeling", "Climate Vulnerability"]
   }
   </script>
 </body>
