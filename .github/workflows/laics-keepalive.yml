@@ -1,0 +1,9 @@
+name: keep LAICS backend awake
+on:
+  schedule: [{ cron: "*/10 * * * *" }]
+  workflow_dispatch:
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - run: curl -fsS -m 90 https://laics-chatbot.onrender.com/health
